@@ -1,11 +1,18 @@
 package com.example.vpnapp
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.vpnapp.database.AppDatabase
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    // Initialize ViewModel using ViewModelProvider with Factory
+    private val keyViewModel: KeyViewModel by viewModels {
+        KeyViewModelFactory(AppDatabase.getDatabase(this).PublicKeyItemDao())
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +35,10 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.keyListFragment -> {
                     loadFragment(KeyListFragment())
+                    true
+                }
+                R.id.experimentFragment -> {
+                    loadFragment(ExperimentFragment())
                     true
                 }
                 else -> false

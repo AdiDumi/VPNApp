@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    kotlin("kapt")
 }
 
 android {
@@ -9,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.vpnapp"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -38,6 +39,20 @@ android {
 
 dependencies {
 
+    implementation("eu.europa.ec.eudi:eudi-lib-android-wallet-core:0.14.0")
+    // required when using the built-in AndroidKeystoreSecureArea implementation provided by the library
+    // for user authentication with biometrics
+    implementation("androidx.biometric:biometric-ktx:1.2.0-alpha05")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+    implementation("com.google.code.gson:gson:2.8.8")
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.fragment:fragment-ktx:1.8.5")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+    implementation(libs.androidx.room.common) // or latest version
+    implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1") // for Kotlin
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

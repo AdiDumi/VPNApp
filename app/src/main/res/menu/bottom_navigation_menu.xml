@@ -10,4 +10,9 @@
         android:id="@+id/keyListFragment"
         android:icon="@drawable/ic_android_black_24dp"
         android:title="Keys" />
+
+    <item
+        android:id="@+id/experimentFragment"
+        android:icon="@drawable/ic_android_black_24dp"
+        android:title="Experiment" />
 </menu>

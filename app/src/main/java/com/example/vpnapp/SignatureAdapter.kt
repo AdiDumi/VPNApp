@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class SignatureAdapter(
-    private val signatures: MutableList<Signature>,
+    private val signatures: List<Signature>,
     private val onDeleteClick: (Signature) -> Unit
 ) : RecyclerView.Adapter<SignatureAdapter.SignatureViewHolder>() {
 
