@@ -1,9 +1,6 @@
 package com.example.vpnapp.database
 
 import androidx.room.TypeConverter
-import com.example.vpnapp.Signature
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 import java.security.KeyPair
 import java.security.KeyFactory
 import java.security.spec.PKCS8EncodedKeySpec
