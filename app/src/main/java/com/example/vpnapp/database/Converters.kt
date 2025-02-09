@@ -34,19 +34,4 @@ class Converters {
 
         return KeyPair(publicKey, privateKey)
     }
-
-
-    @TypeConverter
-    fun fromSignatures(signatures: List<Signature>): String {
-        val gson = Gson()
-        return gson.toJson(signatures)
-    }
-
-    // Convert back from JSON string to Signature List
-    @TypeConverter
-    fun toSignatures(data: String): List<Signature> {
-        val gson = Gson()
-        val listType = object : TypeToken<List<Signature>>() {}.type
-        return gson.fromJson(data, listType)
-    }
 }

@@ -9,11 +9,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
-    // Initialize ViewModel using ViewModelProvider with Factory
-    private val keyViewModel: KeyViewModel by viewModels {
-        KeyViewModelFactory(AppDatabase.getDatabase(this).PublicKeyItemDao())
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

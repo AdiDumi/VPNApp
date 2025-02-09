@@ -39,10 +39,6 @@ android {
 
 dependencies {
 
-    implementation("eu.europa.ec.eudi:eudi-lib-android-wallet-core:0.14.0")
-    // required when using the built-in AndroidKeystoreSecureArea implementation provided by the library
-    // for user authentication with biometrics
-    implementation("androidx.biometric:biometric-ktx:1.2.0-alpha05")
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
     implementation("com.google.code.gson:gson:2.8.8")
